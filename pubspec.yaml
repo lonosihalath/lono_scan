@@ -1,0 +1,28 @@
+name: lono_scan
+description: Scan qrcode & barcode in widget tree with custom options.Accurately decode qrcode & barcode image from path.
+version: 1.0.0
+homepage: 
+
+environment:
+  sdk: '>=3.4.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+
+  plugin:
+    platforms:
+      android:
+        package: com.lono.scan
+        pluginClass: ScanPlugin
+      ios:
+        pluginClass: ScanPlugin
+
+
