@@ -25,38 +25,40 @@ class LonoScanPage extends StatelessWidget {
         bottom: false,
         child: Stack(
           children: [
-            LonoScanView(
-              controller: controller,
-              scanAreaScale: 0.8,
-              scanLineColor: Colors.orange,
-              onCapture: (data) {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return Scaffold(
-                      appBar: AppBar(
-                        title: const Text('Scan Result'),
-                        backgroundColor: Colors.orange,
-                      ),
-                      body: Center(
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Text(
-                            data,
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black87,
+            Container(
+              child: LonoScanView(
+                controller: controller,
+                scanAreaScale: 0.8,
+                scanLineColor: Colors.orange,
+                onCapture: (data) {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return Scaffold(
+                        appBar: AppBar(
+                          title: const Text('Scan Result'),
+                          backgroundColor: Colors.orange,
+                        ),
+                        body: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Text(
+                              data,
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black87,
+                              ),
+                              textAlign: TextAlign.center,
                             ),
-                            textAlign: TextAlign.center,
                           ),
                         ),
-                      ),
-                    );
-                  },
-                )).then((value) {
-                  controller.resume();
-                });
-              },
+                      );
+                    },
+                  )).then((value) {
+                    controller.resume();
+                  });
+                },
+              ),
             ),
             Positioned(
               bottom: 20,
@@ -67,7 +69,7 @@ class LonoScanPage extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.white.withOpacity(1),
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(15),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black26,
@@ -117,25 +119,32 @@ class LonoScanPage extends StatelessWidget {
     required IconData icon,
     required VoidCallback onPressed,
   }) {
-    return ElevatedButton.icon(
-      onPressed: onPressed,
-      icon: Icon(
+    return ElevatedButton(
+  onPressed: onPressed,
+  style: ElevatedButton.styleFrom(
+    foregroundColor: Colors.white,
+    backgroundColor: Colors.orange,
+    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(8),
+    ),
+  ),
+  child: Column(
+    mainAxisSize: MainAxisSize.min, // Ensures the button size adjusts to content
+    children: [
+      Icon(
         icon,
         size: 20,
         color: Colors.white,
       ),
-      label: Text(
+      const SizedBox(height: 4), // Spacing between icon and text
+      Text(
         label,
         style: const TextStyle(fontSize: 14),
       ),
-      style: ElevatedButton.styleFrom(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.orange,
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
-      ),
-    );
+    ],
+  ),
+);
+
   }
 }

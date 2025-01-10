@@ -23,9 +23,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>获取相机权限使用扫一扫功能</string>
+	<string>Obtain camera permissions to use the scan function</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>获取相册权限选择照片识别二维码</string>
+	<string>Get album permissions and select photo to identify the QR code</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

@@ -11,18 +11,24 @@ class LonoScan {
     return version;
   }
 
-  static Future<String?> parse(String path) async {
-    final String? result = await _channel.invokeMethod('parse', path);
-    return result;
+   static Future<String?> parse(String qrCodeData) async {
+    try {
+      final String? result = await _channel.invokeMethod('parse', qrCodeData);
+      return result;
+    } on PlatformException catch (e) {
+      print("Error: ${e.message}");
+      return null;
+    }
   }
 }
+
 
 class LonoScanView extends StatefulWidget {
   LonoScanView({
     this.controller,
     this.onCapture,
-    this.scanLineColor = Colors.green,
-    this.scanAreaScale = 0.7,
+    this.scanLineColor = Colors.orange,
+    this.scanAreaScale = 0.8,
   })  : assert(scanAreaScale <= 1.0, 'scanAreaScale must <= 1.0'),
         assert(scanAreaScale > 0.0, 'scanAreaScale must > 0.0');
 

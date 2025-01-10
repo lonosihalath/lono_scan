@@ -1,9 +1,8 @@
 # lono_scan
 
-Hello Package lono_scan is an update from Package scan.
-Original Package Link ::=> https://pub.dev/packages/scan
+ສະບາຍດີ🙏🏻🙏🏻🙏🏻
 
-- use `LonoScanView` in widget tree to show scan view.
+- use `LonoScanView` in widget to show scan view.
 - custom identifiable area.
 - decode qrcode from image path by `LonoScan.parse`.
 
@@ -38,7 +37,7 @@ import 'package:lono_scan/lono_scan.dart';
 
 ### Usage
 
-- show scan view in widget tree
+- show scan view in widget 
 ```dart
 LonoScanController controller = LonoScanController();
 String qrcode = '';
@@ -48,7 +47,7 @@ Container(
   height: 350,
   child: LonoScanView(
     controller: controller,
-// ;ustom scan area, if set to 1.0, will scan full area
+// Custom scan area, if set to 1.0, will scan full area
     scanAreaScale: .8,
     scanLineColor: Colors.green.shade400,
     onCapture: (data) {
@@ -87,6 +86,10 @@ controller.dispose();
 -keep class com.huawei.updatesdk.**{*;}
 -keep class com.huawei.hms.**{*;}
 ```
+
+# Credit
+Package lono_scan is an update from Package scan.
+Original Package Link ::=> https://pub.dev/packages/scan
 
 # License
 MIT License

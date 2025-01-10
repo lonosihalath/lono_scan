@@ -7,6 +7,6 @@
 
 @implementation ScanPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  [SwiftscanPlugin registerWithRegistrar:registrar]; // Corrected class name
+  [SwiftScanPlugin registerWithRegistrar:registrar]; // Corrected class name
 }
 @end

@@ -9,7 +9,7 @@ import Flutter
 
 
 
-public class scanView: UIView,AVCaptureMetadataOutputObjectsDelegate,FlutterPlugin {
+public class ScanView: UIView,AVCaptureMetadataOutputObjectsDelegate,FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
     //
   }

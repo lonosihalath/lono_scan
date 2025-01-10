@@ -66,14 +66,12 @@ class _MyAppState extends State<MyApp> {
                       Row(
                         children: [
                           _buildActionButton(
-                            label: 'Scan QR from Image',
+                            label: 'Scan from Image',
                             icon: Icons.image,
                             onPressed: () async {
                               ImagePicker picker = ImagePicker();
                               final XFile? res = await picker.pickImage(
                                 source: ImageSource.gallery,
-                                maxWidth: 1000,
-                                maxHeight: 1000,
                               );
 
                               if (res != null) {
@@ -81,6 +79,11 @@ class _MyAppState extends State<MyApp> {
                                 if (str != null) {
                                   setState(() {
                                     qrcode = str;
+                                  });
+                                }
+                                else {
+                                   setState(() {
+                                    qrcode = 'Null';
                                   });
                                 }
                               }
@@ -100,8 +103,9 @@ class _MyAppState extends State<MyApp> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 30),
                       Container(
+                        width: double.infinity,
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
                           color: Colors.orange.shade50,

@@ -2,10 +2,10 @@ import Flutter
 import UIKit
 import Vision
 
-public class SwiftscanPlugin: NSObject, FlutterPlugin {
+public class SwiftScanPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "lono/scan", binaryMessenger: registrar.messenger())
-    let instance = SwiftscanPlugin()
+    let instance = SwiftScanPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
     
     registrar.register(ScanViewFactory(registrar: registrar), withId: "lono/scan_view");
