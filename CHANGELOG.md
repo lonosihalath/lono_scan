@@ -1,8 +1,16 @@
-## 1.0.1
-- public to pubdev
-## 1.0.1+1
-- fixbug
-## 1.0.1+2
-- fixbug java
+## [1.0.0]
+### Added
+- iOS QR code scan support.
+- Ability to get QR code from image on iOS.
 
-- add ios scan qrcode & get qrcode from image
+### Fixed
+- Bug fix in Java code for Android.
+
+## [1.0.0+1] 
+### Initial release.
+- Basic Android QR code scanning functionality.
+
+## [1.0.0+2]
+### Fixed
+- Bug fixes for Android functionality.
+
