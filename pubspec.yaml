@@ -26,4 +26,13 @@ flutter:
       ios:
         pluginClass: ScanPlugin
 
+topics:
+  - flutter
+  - barcode
+  - scanner
+  - scan
+  - lono_scan
+  - image_scan
+  - image
+
 
